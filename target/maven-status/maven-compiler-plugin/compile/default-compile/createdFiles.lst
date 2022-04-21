@@ -1,0 +1,11 @@
+grsu\todomanager\service\TodoService$1.class
+grsu\todomanager\service\TodoService.class
+grsu\todomanager\TodoManagerApplication.class
+grsu\todomanager\entity\todo\Todo.class
+grsu\todomanager\controller\handler\GlobalControllerAdvice.class
+grsu\todomanager\dto\TodoDto.class
+grsu\todomanager\configuration\MapperConfig.class
+grsu\todomanager\repository\TodoRepository.class
+grsu\todomanager\controller\TodoController.class
+grsu\todomanager\entity\BaseEntity.class
+grsu\todomanager\entity\todo\TodoStatus.class

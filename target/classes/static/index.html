@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do app | Lab 2</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+</head>
+
+<body>
+
+<form id="todo_form">
+    <div id="todo_header" class="todo_header">
+        <div class="calendar">
+            <div class="date">
+                <div class="month"></div>
+                <div class="day"></div>
+            </div>
+            <div id="todo_status_text" class="today_text">Today</div>
+        </div>
+        <div class="menu">
+            <div class="dropbtn fa-solid fa-ellipsis"></div>
+            <div id="itemsId" class="menu_items">
+                <div id="completed_todo" class="menu_item">Completed</div>
+                <div id="progress_todo" class="menu_item">In Progress</div>
+                <div id="removed_todo" class="menu_item">Removed</div>
+            </div>
+        </div>
+    </div>
+    <div id="todo_list" class="todo_list"></div>
+    <div class="todo_add_container">
+        <div class="todo_add_item">
+            <label class="plus" for="add_item_btn"></label>
+            <button id="add_item_btn">Create New Item</button>
+            <input id="input" class="input_field" type="text" placeholder="Add new todo" autocomplete="off">
+        </div>
+    </div>
+</form>
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script rel="script" src="js/date.js"></script>
+<script rel="script" src="js/todos.js"></script>
+</html>

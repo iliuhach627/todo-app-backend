@@ -1,0 +1,14 @@
+spring:
+  liquibase:
+    change-log: classpath:/db/master.xml
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: dfaptjlbgdquhh
+    password: 63d43cbba4beade2f768814153c9679d5ba1f13f1b0838727ec62267bba8d8c4
+    url: jdbc:postgresql://ec2-52-48-159-67.eu-west-1.compute.amazonaws.com:5432/dtp1umc69blti
+
+server:
+  error:
+    whitelabel:
+      enabled: false
+  port: ${PORT:8080}
