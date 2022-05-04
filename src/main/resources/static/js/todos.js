@@ -4,13 +4,14 @@ let bodyHeader = document.getElementById('todo_status_text')
 let todosBody = document.getElementById('todo_list')
 let textAreaForTodo = document.getElementById('input')
 let dropDownItems = document.getElementsByClassName('menu_item')
-let token;
+
 const TODO_STATE = {DELETED: 'Removed', COMPLETED: 'Completed', IN_PROGRESS: 'In Progress'}
 const HEADER = {DELETED: 'Removed Todos', COMPLETED: 'Completed Todos', IN_PROGRESS: 'Today'}
 
 const todoInProgressClass = 'default'
 const todoRemovedClass = 'removed'
 const todoCompletedClass = 'completed'
+
 
 window.onload = loadTodos;
 window.addEventListener('keypress', function (event) {
@@ -27,7 +28,6 @@ function toggleDisplayTodos(event) {
 }
 
 function loadTodos(event){
-    token = localStorage.getItem('token')
     todosBody.innerHTML = '';
     $.ajax({
         url: "/api",
@@ -88,17 +88,19 @@ function toggleTextArea(event) {
 }
 
 function getTask(id, text, status) {
+    let cross = `<div class="fa-solid fa-circle-xmark" onclick="deleted(this)"></div>`;
     let todoClass = 'default';
     if (status === 'COMPLETED') {
         todoClass = 'completed';
     } else if (status === 'REMOVED') {
         todoClass = 'removed';
+        cross = `<div class="fa-solid fa-circle-xmark" onclick="deleteTask(id)"></div>`;
     }
 
     return `<div class="todo_item ${todoClass}" id="${id}">
                 <div class="circle" onclick="completed(this)"></div>
                 <div class="todo_description">${text}</div>
-                <div class="fa-solid fa-circle-xmark" onclick="deleted(this)"></div>
+                ${cross}
             </div>`
 }
 
@@ -124,6 +126,7 @@ function deleted(element) {
     updateTask(id, name, 'REMOVED')
 
     parentDiv.classList.remove(todoInProgressClass)
+    parentDiv.classList.remove(todoCompletedClass)
     let circle = parentDiv.querySelector("[class='circle']")
     circle.onclick = null;
     parentDiv.classList.add(todoRemovedClass)
