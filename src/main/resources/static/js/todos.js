@@ -94,7 +94,7 @@ function getTask(id, text, status) {
         todoClass = 'completed';
     } else if (status === 'REMOVED') {
         todoClass = 'removed';
-        cross = `<div class="fa-solid fa-circle-xmark" onclick="deleteTask(id)"></div>`;
+        cross = `<div class="fa-solid fa-circle-xmark" onclick="deleteTask(${id})"></div>`;
     }
 
     return `<div class="todo_item ${todoClass}" id="${id}">
